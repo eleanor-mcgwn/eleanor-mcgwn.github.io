@@ -1,3 +1,210 @@
-<h1>This is a header<h1>
-<p>This is a paragraph<p>
-<p>This is another paragraph<p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mitochondrion</title>
+    <meta name="author" content="Eleanor McGowan">   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Confocal Microscope Anatomy</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    
+    <style>
+
+      .hotspot{
+        display: block;
+        width: 15px;
+        height: 15px;
+        border-radius: 10px;
+        border: none;
+        background-color: rgb(40, 40, 40);
+        box-sizing: border-box;
+        pointer-events: none;
+      }
+    
+      .hotspot[slot="hotspot-hand"]{
+        --min-hotspot-opacity: 0;
+        background-color: purple;
+        background-image: linear-gradient(to bottom right, rgb(221, 0, 255), rgb(68, 68, 68));
+
+      }
+
+      .hotspot[slot="hotspot-hand1"]{
+        --min-hotspot-opacity: 0;
+        background-color: purple;
+        background-image: linear-gradient(to bottom right, rgb(221, 0, 255), rgb(68, 68, 68));
+
+      }
+
+      .hotspot[slot="hotspot-hand2"]{
+        --min-hotspot-opacity: 0;
+        background-color: purple;
+        background-image: linear-gradient(to bottom right, rgb(221, 0, 255), rgb(68, 68, 68));
+
+      }  
+
+
+      .hotspot[slot="hotspot-hand3"]{
+        --min-hotspot-opacity: 0;
+        background-color: purple;
+        background-image: linear-gradient(to bottom right, rgb(221, 0, 255), rgb(68, 68, 68));
+
+      }  
+
+      .hotspot[slot="hotspot-hand4"]{
+        --min-hotspot-opacity: 0;
+        background-color: purple;
+        background-image: linear-gradient(to bottom right, rgb(221, 0, 255), rgb(68, 68, 68));
+
+      }  
+
+      .hotspot[slot="hotspot-hand5"]{
+        --min-hotspot-opacity: 0;
+        background-color: purple;
+        background-image: linear-gradient(to bottom right, rgb(221, 0, 255), rgb(68, 68, 68));
+
+      }  
+    
+      .hotspot[slot="hotspot-hand6"]{
+        --min-hotspot-opacity: 0;
+        background-color: purple;
+        background-image: linear-gradient(to bottom right, rgb(221, 0, 255), rgb(68, 68, 68));
+
+      }  
+
+      .hotspot[slot="hotspot-hand7"]{
+        --min-hotspot-opacity: 0;
+        background-color: purple;
+        background-image: linear-gradient(to bottom right, rgb(221, 0, 255), rgb(68, 68, 68));
+
+      } 
+
+      .hotspot[slot="hotspot-hand8"]{
+        --min-hotspot-opacity: 0;
+        background-color: purple;
+        background-image: linear-gradient(to bottom right, rgb(221, 0, 255), rgb(68, 68, 68));
+
+      } 
+      
+      .hotspot[slot="hotspot-hand9"]{
+        --min-hotspot-opacity: 0;
+        background-color: purple;
+        background-image: linear-gradient(to bottom right, rgb(221, 0, 255), rgb(68, 68, 68));
+
+      } 
+
+
+      .annotation{
+        background-color: #FFFFFF;
+        position: absolute;
+        transform: translate(13px, 5px);
+        border-radius: 0px 5px 5px 5px;
+        padding: 8px;
+        font-size: small;
+        font-family:Arial, Helvetica, sans-serif;
+      }
+
+      /* This keeps child nodes hidden while the element loads */
+      :not(:defined) > * {
+        display: none;
+      }
+    </style>
+</head>
+
+<body>
+    <!-- As a heading -->
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Mitochondrion</span>
+      <div class="form-inline my-2 my-lg-0">
+          <!-- Button trigger modal -->
+        <button class="btn btn-outline-success my-2 my-sm-0" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+          <img src = "dna.svg">
+        </button>
+      </div>
+    </div>
+
+  </nav>
+  <div class="container-fluid">
+      <model-viewer style = "width: 100%; height: 600px;" id="hotspot-demo" ar ar-modes="webxr" camera-controls touch-action="pan-y" src="Mitochondria1.glb" shadow-intensity="1" alt="A 3D model of a Mitochondria." >
+        <button class="hotspot" slot="hotspot-hand" data-position="10 5 5" data-normal="-0.73 0.05 0.69">
+          <div class="annotation">Outer Membrane</div>
+        </button>
+        <button class="hotspot" slot="hotspot-hand1" data-position="7 8 0" data-normal="-0.73 0.05 0.69">
+          <div class="annotation">Intermembrane Space</div>
+        </button>
+        <button class="hotspot" slot="hotspot-hand2" data-position="-11.75 2 -0.6" data-normal="-0.73 0.05 0.69">
+          <div class="annotation">Inner Membrane</div>
+        </button>
+    
+        <button class="hotspot" slot="hotspot-hand3" data-position="2 1 -0.6" data-normal="-0.73 0.05 0.69">
+          <div class="annotation">Matrix</div>
+        </button>
+    
+        <button class="hotspot" slot="hotspot-hand4" data-position="-3.6 2.9 -1.2" data-normal="-0.73 0.05 0.69">
+          <div class="annotation">Ribosome</div>
+        </button>
+    
+        <button class="hotspot" slot="hotspot-hand5" data-position="-5.5 2 2.5" data-normal="-0.73 0.05 0.69">
+          <div class="annotation">Cristae</div>
+        </button>
+
+        <button class="hotspot" slot="hotspot-hand6" data-position="6 2 1" data-normal="-0.73 0.05 0.69">
+          <div class="annotation">DNA</div>
+        </button>
+    
+      </model-viewer>
+
+  <div class="fixed-bottom text-center" style = "background-color: #FFFFFF;">
+    <small class="text-muted">Eleanor McGowan | 2023 | Hodgkinson & Devine Lab</small>
+  </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Genomics</h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6 class="modal-title" id="exampleModalLongTitle">Mitochondrial Genome</h6>
+        <p>
+          The mitochondrial genome is a circular DNA molecule that is located within the mitochondria of eukaryotic cells. It is typically small, with only a few dozen genes, and encodes proteins, tRNAs, and rRNAs that are essential for mitochondrial function. In humans, the mitochondrial genome is approximately 16.5 kilobases in length and encodes 13 protein-coding genes, 22 tRNA genes, and 2 rRNA genes.
+
+          Unlike the nuclear genome, which is inherited from both parents and undergoes recombination, the mitochondrial genome is inherited exclusively from the mother and does not undergo recombination. This means that mutations in the mitochondrial genome are passed down maternally and can be used to trace maternal lineages in populations.
+
+          Mutations in the mitochondrial genome can lead to a range of mitochondrial diseases and disorders, many of which affect the energy-producing function of the mitochondria. In some cases, mitochondrial diseases are caused by mutations in nuclear genes that affect mitochondrial function, rather than mutations in the mitochondrial genome itself. The study of the mitochondrial genome and its role in mitochondrial function and disease is an active area of research in molecular biology and genetics.
+        </p>
+        <h6 class="modal-title" id="exampleModalLongTitle">Nuclear Genome</h6>
+        <p>
+          While the mitochondrial genome encodes for only a small number of genes, the vast majority of mitochondrial proteins are encoded by nuclear genes. These nuclear genes are transcribed in the nucleus and translated in the cytosol before being imported into the mitochondria.
+
+          The nuclear-encoded mitochondrial genes include genes that encode for proteins that are involved in mitochondrial function, such as enzymes involved in the citric acid cycle and oxidative phosphorylation, as well as proteins involved in mitochondrial biogenesis and maintenance, such as proteins involved in mitochondrial DNA replication and repair.
+
+          Mutations or dysregulation of nuclear-encoded mitochondrial genes can also lead to a range of mitochondrial diseases and disorders, including Leigh syndrome, myoclonic epilepsy with ragged-red fibers (MERRF), and mitochondrial encephalomyopathy with lactic acidosis and stroke-like episodes (MELAS), among others.
+
+          The study of nuclear-encoded mitochondrial genes and their roles in mitochondrial function and disease is also an active area of research in molecular biology and genetics.
+        </p>
+      </div>
+      <div class="modal-footer">
+ 
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+
+</html>
