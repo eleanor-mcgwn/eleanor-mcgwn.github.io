@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G2B1HNB67M"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-G2B1HNB67M');
-    </script>
-
     <title>Mitochondria</title>
+    <link rel="icon" href="mitochondria.ico">
+
     <meta name="author" content="Eleanor McGowan">   
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Confocal Microscope Anatomy</title>
-    <script type="module" src="model-viewer.min.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
     
     <style>
+      .footer{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        text-align: center;
+        padding-bottom: 5px;
+        cursor: pointer;
+      }
 
       .hotspot{
         display: block;
@@ -35,7 +37,7 @@
         height: 15px;
         border-radius: 10px;
         border: none;
-        background-color: rgb(40, 40, 40);
+        background-color: purple;
         box-sizing: border-box;
         pointer-events: none;
       }
@@ -58,7 +60,6 @@
         --min-hotspot-opacity: 0;
         background-color: purple;
         background-image: linear-gradient(to bottom right, rgb(221, 0, 255), rgb(68, 68, 68));
-
       }  
 
 
@@ -66,7 +67,6 @@
         --min-hotspot-opacity: 0;
         background-color: purple;
         background-image: linear-gradient(to bottom right, rgb(221, 0, 255), rgb(68, 68, 68));
-
       }  
 
       .hotspot[slot="hotspot-hand4"]{
@@ -87,46 +87,25 @@
         --min-hotspot-opacity: 0;
         background-color: purple;
         background-image: linear-gradient(to bottom right, rgb(221, 0, 255), rgb(68, 68, 68));
-
       }  
 
       .hotspot[slot="hotspot-hand7"]{
         --min-hotspot-opacity: 0;
         background-color: purple;
         background-image: linear-gradient(to bottom right, rgb(221, 0, 255), rgb(68, 68, 68));
-
       } 
 
       .hotspot[slot="hotspot-hand8"]{
         --min-hotspot-opacity: 0;
         background-color: purple;
         background-image: linear-gradient(to bottom right, rgb(221, 0, 255), rgb(68, 68, 68));
-
       } 
       
       .hotspot[slot="hotspot-hand9"]{
         --min-hotspot-opacity: 0;
         background-color: purple;
         background-image: linear-gradient(to bottom right, rgb(221, 0, 255), rgb(68, 68, 68));
-
       } 
-
-
-      .annotation{
-        background-color: #FFFFFF;
-        position: absolute;
-        transform: translate(13px, 5px);
-        border-radius: 0px 5px 5px 5px;
-        padding: 8px;
-        font-size: small;
-        font-family:Arial, Helvetica, sans-serif;
-      }
-
-      /* This keeps child nodes hidden while the element loads */
-      :not(:defined) > * {
-        display: none;
-      }
-
 
       .view-button {
       background: #fff;
@@ -137,7 +116,7 @@
       color: rgba(0, 0, 0, 0.8);
       display: block;
       font-family: Futura, Helvetica Neue, sans-serif;
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 700;
       max-width: 128px;
       overflow-wrap: break-word;
@@ -148,156 +127,274 @@
       transform: translate3d(-50%, -50%, 0);
     }
 
-    .sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: whitesmoke;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
+    .progress-bar{
+      background-color: gray;
+    }
 
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
 
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
     </style>
 </head>
 
 <body>
 
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div class = "container-fluid">
-      <h1>Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-      <canvas id="myChart"></canvas>
+
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand mb-0 h1">Mitochondria</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item" data-toggle="modal" data-target ='#overview'>
+          <a  href="#" class="nav-link">Overview</a>
+        </li>
+        <li class="nav-item" data-toggle="modal" data-target ='#history'>
+          <a  href="#" class="nav-link">History</a>
+        </li>
+        <li class="nav-item" data-toggle="modal" data-target ='#function'>
+          <a class="nav-link" href="#">Function</a>
+        </li>
+        <li class="nav-item" data-toggle="modal" data-target ='#function'>
+          <a class="nav-link" href="#">Genes</a>
+        </li>
+        <li class="nav-item" data-toggle="modal" data-target ='#healthAndDis'>
+          <a class="nav-link" href="#">Health and Disease</a>
+        </li>
+
+      </ul>
     </div>
-
-
-  </div>
-
-    <!-- As a heading -->
-  <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1">Mitochondria</span>
-      <div class="form-inline my-2 my-lg-0">
-          <!-- Button trigger modal -->
-        <button class="btn btn-outline-success my-2 my-sm-0" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-          <img src = "information.svg">
-        </button>
-
-      </div>
-    </div>
-
   </nav>
 
 
-  <div class="container-fluid">
 
-    <model-viewer style = "width: 100%; height: 600px;" id="hotspot-camera-view-demo" src="Mitochondria.glb" alt="Thor and the Midgard Serpent" camera-controls touch-action="none" camera-orbit="0 0 0" camera-target="0 0 0" field-of-view="45deg" min-field-of-view="25deg" max-field-of-view="45deg" interpolation-decay="200" min-camera-orbit="auto auto 100%" ar>
-      
-      <button class="view-button" slot="hotspot-0" data-position="10 5 5" data-normal="-0.73 0.05 0.69" data-orbit="25deg 75deg 10m" data-target="10m 0m -3m">
-        Outer Membrane
-      </button>    
+    <div class="container text-center" style = 'overflow: visible'>
+      <div class="row" style = 'overflow: visible'>
+        <div class="col-lg" style = 'overflow: visible'>
+          <div class="container-fluid" id = 'main' style = 'overflow: visible'>
 
-      <button class="view-button" slot="hotspot-1" data-position="7 8 0" data-normal="-0.73 0.05 0.69" data-orbit="-100deg 65deg 10m" data-target="10m 0m 0m">
-        Intermembrane Space
-      </button>   
+            <model-viewer style = "width: 100%; height: 450px;" id="hotspot-camera-view-demo" src="model/Mitochondria2.glb" alt="Thor and the Midgard Serpent" camera-controls touch-action="none" camera-orbit="0 0 0" camera-target="0 0 0" field-of-view="45deg" min-field-of-view="25deg" max-field-of-view="45deg" interpolation-decay="200" min-camera-orbit="auto auto 100%" ar>
+              
+              <button class="view-button" slot="hotspot-0" data-position="10 5 5" data-normal="-0.73 0.05 0.69" data-orbit="25deg 75deg 10m" data-target="10m 0m -3m">
+                Outer Membrane
+              </button>    
+        
+              <button class="view-button" slot="hotspot-1" data-position="7 8 0" data-normal="-0.73 0.05 0.69" data-orbit="-100deg 65deg 10m" data-target="10m 0m 0m">
+                Intermembrane Space
+              </button>   
+        
+              <button class="view-button" slot="hotspot-2" data-position="-11.75 2 -0.6" data-normal="-0.73 0.05 0.69" data-orbit="90deg 20deg 10m" data-target="0m 10m 0m">
+                Inner Membrane
+              </button>  
+        
+              <button class="view-button" slot="hotspot-3" data-position="2 1 -0.6" data-normal="-0.73 0.05 0.69" data-orbit="0deg 0deg 0m" data-target="0m 0m 0m">
+                Matrix
+              </button> 
+        
+              <button class="view-button" slot="hotspot-4" data-position="-3.6 2.9 -1.2" data-normal="-0.73 0.05 0.69" data-orbit="0deg 0deg 0m" data-target="0.5m 0.5m 0.5m">
+                Ribosome
+              </button> 
+        
+              <button class="view-button" slot="hotspot-5" data-position="-5.5 2 2.5" data-normal="-0.73 0.05 0.69" data-orbit="10deg 0deg 10m" data-target="0m 5m 5m">
+                Cristae
+              </button> 
+        
+              <button class="view-button" slot="hotspot-6" data-position="6 2 1" data-normal="-0.73 0.05 0.69" data-orbit="10deg 0deg 10m" data-target="0m 0m 0m">
+                DNA
+              </button> 
 
-      <button class="view-button" slot="hotspot-2" data-position="-11.75 2 -0.6" data-normal="-0.73 0.05 0.69" data-orbit="90deg 20deg 10m" data-target="0m 10m 0m">
-        Inner Membrane
-      </button>  
 
-      <button class="view-button" slot="hotspot-3" data-position="2 1 -0.6" data-normal="-0.73 0.05 0.69" data-orbit="0deg 0deg 0m" data-target="0m 0m 0m">
-        Matrix
-      </button> 
+            </model-viewer>
 
-      <button class="view-button" slot="hotspot-4" data-position="-3.6 2.9 -1.2" data-normal="-0.73 0.05 0.69" data-orbit="0deg 0deg 0m" data-target="0.5m 0.5m 0.5m">
-        Ribosome
-      </button> 
-
-      <button class="view-button" slot="hotspot-5" data-position="-5.5 2 2.5" data-normal="-0.73 0.05 0.69" data-orbit="10deg 0deg 10m" data-target="0m 5m 5m">
-        Cristae
-      </button> 
-
-      <button class="view-button" slot="hotspot-6" data-position="6 2 1" data-normal="-0.73 0.05 0.69" data-orbit="10deg 0deg 10m" data-target="0m 0m 0m">
-        DNA
-      </button> 
-
-    </model-viewer>
+          
+        </div>
+        <div class="col-sm" id = 'mainCard' style = 'overflow: visible'>
+          <div class="card" style = 'overflow: visible'>
+            <div class="card-header mb-0 h6" id = "headDescription" >
+              Click, rotate and zoom to find out more!
+            </div>
+            <div class="card-body" id = "description" >
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
-  <div class="fixed-bottom text-center" style = "background-color: #FFFFFF;">
-    <small class="text-muted">Eleanor McGowan | 2023 | Hodgkinson & Devine Lab</small>
+
+  <div class="footer" data-toggle="modal" data-target ='#exampleModalLong'>
+    <div class="progress" style="height: 5px;">
+      <div id = 'progress' class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <small class="text-muted">Hodgkinson & Devine Lab | 2023</small>
   </div>
-
-
+  
 <!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="overview" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Genomics</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Overview</h5>
 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <h6 class="modal-title" id="exampleModalLongTitle">Mitochondrial Genome</h6>
+        <h6 class="modal-title" id="exampleModalLongTitle"></h6>
         <p>
-          The mitochondrial genome is a circular DNA molecule that is located within the mitochondria of eukaryotic cells. It is typically small, with only a few dozen genes, and encodes proteins, tRNAs, and rRNAs that are essential for mitochondrial function. In humans, the mitochondrial genome is approximately 16.5 kilobases in length and encodes 13 protein-coding genes, 22 tRNA genes, and 2 rRNA genes.
+          Mitochondria are organelles found in most eukaryotic cells, which are responsible for producing energy in the form of ATP through the process of cellular respiration. They are often referred to as the "powerhouses" of the cell.
 
-          Unlike the nuclear genome, which is inherited from both parents and undergoes recombination, the mitochondrial genome is inherited exclusively from the mother and does not undergo recombination. This means that mutations in the mitochondrial genome are passed down maternally and can be used to trace maternal lineages in populations.
-
-          Mutations in the mitochondrial genome can lead to a range of mitochondrial diseases and disorders, many of which affect the energy-producing function of the mitochondria. In some cases, mitochondrial diseases are caused by mutations in nuclear genes that affect mitochondrial function, rather than mutations in the mitochondrial genome itself. The study of the mitochondrial genome and its role in mitochondrial function and disease is an active area of research in molecular biology and genetics.
+          Mitochondria are double-membraned organelles, with an outer membrane and an inner membrane that is highly folded, creating structures called cristae. The space between the two membranes is called the intermembrane space, while the fluid-filled interior of the organelle is called the matrix.
+          
+          The process of cellular respiration involves the conversion of glucose and other molecules into ATP, which is used by the cell as an energy source. This process occurs within the mitochondria, specifically in the inner membrane and matrix. The energy released during cellular respiration is used to power many cellular processes, including muscle contraction, cell division, and the synthesis of proteins and other molecules.
+          
+          In addition to their role in energy production, mitochondria also play a key role in other cellular processes, such as calcium signaling, regulation of cell death, and the synthesis of heme, a component of hemoglobin. Mitochondrial dysfunction has been implicated in a number of diseases, including cancer, diabetes, and neurodegenerative disorders such as Alzheimer's and Parkinson's disease.
         </p>
-        <h6 class="modal-title" id="exampleModalLongTitle">Nuclear Genome</h6>
-        <p>
-          While the mitochondrial genome encodes for only a small number of genes, the vast majority of mitochondrial proteins are encoded by nuclear genes. These nuclear genes are transcribed in the nucleus and translated in the cytosol before being imported into the mitochondria.
 
-          The nuclear-encoded mitochondrial genes include genes that encode for proteins that are involved in mitochondrial function, such as enzymes involved in the citric acid cycle and oxidative phosphorylation, as well as proteins involved in mitochondrial biogenesis and maintenance, such as proteins involved in mitochondrial DNA replication and repair.
-
-          Mutations or dysregulation of nuclear-encoded mitochondrial genes can also lead to a range of mitochondrial diseases and disorders, including Leigh syndrome, myoclonic epilepsy with ragged-red fibers (MERRF), and mitochondrial encephalomyopathy with lactic acidosis and stroke-like episodes (MELAS), among others.
-
-          The study of nuclear-encoded mitochondrial genes and their roles in mitochondrial function and disease is also an active area of research in molecular biology and genetics.
-        </p>
+      
       </div>
       <div class="modal-footer">
-        <canvas id="myChart"></canvas>
 
- 
       </div>
     </div>
   </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">About Us</h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6 class="modal-title" id="exampleModalLongTitle"></h6>
+        <p>
+          This interactive webpage was developed in 2023 by Eleanor McGowan in collaboration with the Hodgkinson/Devine Lab. All details have been fact checked by expert scientists in mitochondrial research. 
+          <br><br>
+          We would like to acknowledge and give credit to the following sources for providing content and materials used on our webpage:
+          <ul>
+            <li>SketchFab/Nima</li>
+            <li>Blender</li>
+            <li>GitHub pages</li>
+            <li>Chat GPT</li>
+            <li>Google Analytics</li>
+          </ul>
+          We are grateful for the use of their materials and have provided attribution wherever possible. If you believe that any attribution is missing or incorrect, please contact eleanor.mcgwn@gmail.com and we will correct it promptly.
+          <br><br>
+          You are free to use and distribute this work as you please. Attribute as Hodgekinson/Devine (2023).
+        </p>
+      
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="history" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">History</h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6 class="modal-title" id="exampleModalLongTitle"></h6>
+        <p>
+          The origin and evolution of mitochondria is a topic of scientific interest and debate.
+
+          The most widely accepted theory of mitochondrial origin is the **endosymbiotic theory**, which suggests that mitochondria were once free-living bacteria that were engulfed by a larger host cell. This event likely occurred over a billion years ago and resulted in a symbiotic (mutually beneficial) relationship between the host cell and the mitochondria, where the host provides protection and nutrients to the mitochondria, and the mitochondria provides energy to the host cell.
+          
+          Over time, the host and the mitochondria have evolved together, and mitochondria have become specialised to perform various functions within the host cell.
+        </p>
+      
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="function" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Function</h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6 class="modal-title" id="exampleModalLongTitle"></h6>
+        <p>
+          Mitochondria have many important functions within a cell:
+
+          1. Energy production: Mitochondria are the powerhouses of the cell. One of the primary functions of mitochondria is to generate energy for the cell. This energy is called ATP (or adenosine triphosphate) and acts as the fuel for almost all cellular processes!
+          2. Metabolism: Mitochondria play a key role in metabolism by participating in the break down of fatty acids, amino acids, and glucose. This breakdown occurs in the mitochondrial matrix.
+          3. Calcium regulation: Mitochondria are involved in regulating the concentration of calcium ions in the cell. Calcium is an important cellular molecule that is involved in processes such as neuronal signalling and muscle contraction. 
+          4. Cell signalling: Mitochondria produce signalling molecules called reactive oxygen species (ROS) and nitric oxide (NO). ROS and NO can activate various signalling pathways that result in gene expression, cell division and cell death.
+          5. Cell Death: Apoptosis is the scientific name given to programmed cell death. Mitochondria play a crucial role in apoptosis because the release proteins which activate cellular death pathways.
+        </p>
+        <canvas id="myChart"></canvas>
+
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="healthAndDis" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Health and Disease</h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6 class="modal-title" id="exampleModalLongTitle"></h6>
+        <p>
+          Since we now know that mitochondria have a wide range of functions in the cell. It is no surprise that dysfunction of mitochondria can lead to a wide range of health problems and diseases.
+
+          1. Neurodegenerative diseases: Mitochondrial dysfunction has been linked to a number of neurodegenerative diseases, including Parkinson's disease, Alzheimer's disease, and Huntington's disease. These conditions are associated with the accumulation of damaged proteins in the neurons, leading to impaired energy production and cellular stress.
+          2. Cardiovascular diseases: Mitochondrial dysfunction can lead to a range of cardiovascular diseases, including heart failure, arrhythmias, and ischemic heart disease. This is because the heart muscle requires a constant supply of energy to function properly, and any disruption to mitochondrial function can compromise this supply.
+          3. Metabolic disorders: Mitochondrial dysfunction has also been implicated in a range of metabolic disorders, such as type 2 diabetes, obesity, and metabolic syndrome. This is because mitochondria are responsible for regulating glucose and lipid metabolism, and any disruption to their function can lead to impaired energy balance.
+          4. Cancer: Mitochondrial dysfunction has been linked to the development and progression of cancer. In some cases, cancer cells have been found to have mutations in their mitochondrial DNA, leading to altered energy metabolism and increased proliferation.
+          5. Aging: Mitochondrial dysfunction is also thought to play a role in the aging process, as it is associated with a decline in energy production and increased oxidative stress. This can lead to a range of age-related diseases, such as neurodegenerative diseases, cardiovascular diseases, and metabolic disorders.
+          
+          Overall, mitochondrial dysfunction can have a significant impact on human health, and understanding the underlying mechanisms involved could lead to the development of new therapies for a range of diseases.
+        </p>
+      
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   const ctx = document.getElementById('myChart');
 
@@ -305,22 +402,27 @@
     type: 'doughnut',
     data: {
       labels: [
-      'Gene 1',
-      'Gene 2',
-      'Gene 3'
+      'Essential Proteins',
+      'Transfer RNA',
+      'Ribosomal RNA'
       ],
       datasets: [{
-        label: 'My First Dataset',
-        data: [300, 50, 100],
+        label: 'Number of Genes',
+        data: [13, 22, 2],
         backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)'
+          '#F0F0F0',
+          '#F4F4F4',
+          '#F9F9F9'
         ],
         hoverOffset: 4
       }]
     },
     options: {
+      plugins:{
+        title: {
+                display: true,
+                text: 'Mitochondrial DNA'
+      }},
       scales: {
         xAxes: [{
             gridLines: {
@@ -336,26 +438,70 @@
     }
   });
 
+  let progArr = []
+
+  const infoMap = {
+    "Intermembrane Space": "The intermembrane space is a small gap between the outer and inner walls of mitochondria, which are like tiny power plants in our cells. This space helps make energy by storing molecules needed for this process and creating an electric charge that powers the production of energy.",
+    "Outer Membrane": "The outer membrane of mitochondria is like a shield that surrounds the power plant of our cells. It protects the inner parts of the mitochondria and controls the movement of molecules in and out of it. It's like a gatekeeper that allows the good stuff to come in and keeps the bad stuff out.",
+    "Inner Membrane": "The inner membrane of mitochondria is like a second wall that surrounds the power plant of our cells. It's a very important wall because it's where the energy is made. The inner membrane is made up of special proteins that help to create energy by using the electrical charge generated by the intermembrane space.",
+    "DNA": "The DNA of mitochondria is like a small instruction booklet that tells the mitochondria how to make energy for the cell. It's made up of genes, which are like different chapters in the booklet. These genes contain the information needed to make the proteins that help create energy, like the parts needed to build a machine.",
+    "Matrix": "The matrix of mitochondria is like the factory floor where most of the energy is made. It's a gooey substance that fills the space inside the inner membrane and contains all the machines that help create energy. The matrix is where the fuel is mixed with oxygen to produce energy that powers our cells.",
+    "Ribosome": "The ribosome of mitochondria is like a tiny factory that makes proteins, which are like building blocks for our body. It reads the instructions in our DNA and turn them into proteins. The ribosome is an important part of the mitochondria because it helps to make the proteins that are needed for the mitochondria to function properly.",
+    "Cristae": "The cristae of mitochondria are like the folds in a curtain that help increase the surface area inside the mitochondria. They're important because they provide more space for the machines inside the matrix to do their work, like a bigger desk that allows you to do more work. The cristae help the mitochondria produce more energy efficiently, which is important for keeping our bodies running smoothly."
+  }
+
   const modelViewer2 = document.querySelector("#hotspot-camera-view-demo");
   const annotationClicked = (annotation) => {
     let dataset = annotation.dataset;
     modelViewer2.cameraTarget = dataset.target;
     modelViewer2.cameraOrbit = dataset.orbit;
     modelViewer2.fieldOfView = '45deg';
-    openNav();
-  }
+
+    var cur = annotation.innerHTML
+    var cur = cur.trim()
+    console.log(cur)
+
+
+
+    document.getElementById("headDescription").innerHTML = cur
+    document.getElementById("description").innerHTML = infoMap[cur];
+
+
+    if (!progArr.includes(annotation.innerHTML)) {
+      progArr.push(annotation.innerHTML)
+      console.log(progArr)
+
+      var prog = document.getElementById('progress').style.width
+      var prog = parseInt(prog.slice(0, -1));
+      var newProg = (prog + 15).toString() + "%"
+      document.getElementById('progress').style="width: " + newProg;
+      
+      if (progArr.length === 7){
+        document.getElementById('mainCard').innerHTML += '<div style = "position: absolute; margin-left: auto; margin-right: auto; bottom: 0; left:0; right:0; z-index: 1; pointer-events: none; overflow: visible"><lottie-player src="https://assets7.lottiefiles.com/packages/lf20_pkanqwys.json" background="transparent"  speed="1" autoplay></lottie-player></div>'
+      };
+      
+      
+      
+      
+      
+
+    }
+
+    
+
+
+
+
+  };
 
   modelViewer2.querySelectorAll('button').forEach((hotspot) => {
     hotspot.addEventListener('click', () => annotationClicked(hotspot));
   });
 
-  function openNav() {
-  document.getElementById("mySidenav").style.width = "30%";
-}
 
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
+
+  
+
 </script>
 
 </body>
