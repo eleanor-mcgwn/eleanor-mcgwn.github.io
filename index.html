@@ -128,8 +128,9 @@
     }
 
     .progress-bar{
-      background-color: gray;
+      background-color: #8B5FBF;
     }
+
 
 
     </style>
@@ -140,7 +141,7 @@
 
   </nav>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand mb-0 h1">Mitochondria</a>
+    <a class="navbar-brand mb-0 h1" style = "color: #482A51;">Mitochondria</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -173,33 +174,33 @@
         <div class="col-lg" style = 'overflow: visible'>
           <div class="container-fluid" id = 'main' style = 'overflow: visible'>
 
-            <model-viewer style = "width: 100%; height: 450px;" id="hotspot-camera-view-demo" src="Mitochondria.glb" alt="Thor and the Midgard Serpent" camera-controls touch-action="none" camera-orbit="0 0 0" camera-target="0 0 0" field-of-view="45deg" min-field-of-view="25deg" max-field-of-view="45deg" interpolation-decay="200" min-camera-orbit="auto auto 100%" ar>
+            <model-viewer style = "width: 100%; height: 450px;" id="hotspot-camera-view-demo" src="model/Mitochondria2.glb" alt="Thor and the Midgard Serpent" camera-controls touch-action="none" camera-orbit="0 0 0" camera-target="0 0 0" field-of-view="45deg" min-field-of-view="25deg" max-field-of-view="45deg" interpolation-decay="200" min-camera-orbit="auto auto 100%" ar>
               
-              <button class="view-button" slot="hotspot-0" data-position="10 5 5" data-normal="-0.73 0.05 0.69" data-orbit="25deg 75deg 10m" data-target="10m 0m -3m">
+              <button class="view-button" slot="hotspot-0" data-position="12 0 2" data-normal="0 0 0" data-orbit="25deg 75deg 10m" data-target="12 0 2">
                 Outer Membrane
               </button>    
         
-              <button class="view-button" slot="hotspot-1" data-position="7 8 0" data-normal="-0.73 0.05 0.69" data-orbit="-100deg 65deg 10m" data-target="10m 0m 0m">
+              <button class="view-button" slot="hotspot-1" data-position="6 7 -1" data-normal="0 0 0" data-orbit="-85deg 45deg 5m" data-target="6 7 -1">
                 Intermembrane Space
               </button>   
         
-              <button class="view-button" slot="hotspot-2" data-position="-11.75 2 -0.6" data-normal="-0.73 0.05 0.69" data-orbit="90deg 20deg 10m" data-target="0m 10m 0m">
+              <button class="view-button" slot="hotspot-2" data-position="-10 4 -2" data-normal="0 0 0" data-orbit="0deg -180deg 10m" data-target="-10 4 -2">
                 Inner Membrane
               </button>  
         
-              <button class="view-button" slot="hotspot-3" data-position="2 1 -0.6" data-normal="-0.73 0.05 0.69" data-orbit="0deg 0deg 0m" data-target="0m 0m 0m">
+              <button class="view-button" slot="hotspot-3" data-position="-3 2.5 0" data-normal="0 0 0" data-orbit="0deg 0deg 0m" data-target="-3 2.5 0">
                 Matrix
               </button> 
         
-              <button class="view-button" slot="hotspot-4" data-position="-3.6 2.9 -1.2" data-normal="-0.73 0.05 0.69" data-orbit="0deg 0deg 0m" data-target="0.5m 0.5m 0.5m">
+              <button class="view-button" slot="hotspot-4" data-position="5 3 0" data-normal="0 0 0" data-orbit="220deg 85deg -10m" data-target="5 3 0">
                 Ribosome
               </button> 
         
-              <button class="view-button" slot="hotspot-5" data-position="-5.5 2 2.5" data-normal="-0.73 0.05 0.69" data-orbit="10deg 0deg 10m" data-target="0m 5m 5m">
+              <button class="view-button" slot="hotspot-5" data-position="-8 0 2" data-normal="0 0 0" data-orbit="-85deg 45deg 0m" data-target="-8 0 2">
                 Cristae
               </button> 
         
-              <button class="view-button" slot="hotspot-6" data-position="6 2 1" data-normal="-0.73 0.05 0.69" data-orbit="10deg 0deg 10m" data-target="0m 0m 0m">
+              <button class="view-button" slot="hotspot-6" data-position="2 0 0" data-normal="0 0 0" data-orbit="220deg -65deg 0m" data-target="2 0 0">
                 DNA
               </button> 
 
@@ -220,6 +221,9 @@
         </div>
       </div>
     </div>
+
+    <br>
+    <br>
 
 
 
@@ -441,13 +445,13 @@
   let progArr = []
 
   const infoMap = {
-    "Intermembrane Space": "The intermembrane space is a small gap between the outer and inner walls of mitochondria, which are like tiny power plants in our cells. This space helps make energy by storing molecules needed for this process and creating an electric charge that powers the production of energy.",
-    "Outer Membrane": "The outer membrane of mitochondria is like a shield that surrounds the power plant of our cells. It protects the inner parts of the mitochondria and controls the movement of molecules in and out of it. It's like a gatekeeper that allows the good stuff to come in and keeps the bad stuff out.",
-    "Inner Membrane": "The inner membrane of mitochondria is like a second wall that surrounds the power plant of our cells. It's a very important wall because it's where the energy is made. The inner membrane is made up of special proteins that help to create energy by using the electrical charge generated by the intermembrane space.",
-    "DNA": "The DNA of mitochondria is like a small instruction booklet that tells the mitochondria how to make energy for the cell. It's made up of genes, which are like different chapters in the booklet. These genes contain the information needed to make the proteins that help create energy, like the parts needed to build a machine.",
-    "Matrix": "The matrix of mitochondria is like the factory floor where most of the energy is made. It's a gooey substance that fills the space inside the inner membrane and contains all the machines that help create energy. The matrix is where the fuel is mixed with oxygen to produce energy that powers our cells.",
-    "Ribosome": "The ribosome of mitochondria is like a tiny factory that makes proteins, which are like building blocks for our body. It reads the instructions in our DNA and turn them into proteins. The ribosome is an important part of the mitochondria because it helps to make the proteins that are needed for the mitochondria to function properly.",
-    "Cristae": "The cristae of mitochondria are like the folds in a curtain that help increase the surface area inside the mitochondria. They're important because they provide more space for the machines inside the matrix to do their work, like a bigger desk that allows you to do more work. The cristae help the mitochondria produce more energy efficiently, which is important for keeping our bodies running smoothly."
+    "Intermembrane Space": "The intermembrane space of mitochondria is a narrow region located between the outer and inner membranes. It holds and releases necessary molecules to create an electrical potential that fuels energy production reactions.",
+    "Outer Membrane": "The outer membrane of mitochondria acts as a protective barrier that encases the internal components and regulates the passage of molecules in and out of it. It operates as a selective filter, allowing beneficial substances to enter while preventing harmful ones from gaining entry. This membrane essentially acts as a gatekeeper, controlling the flow of molecules and maintaining the integrity of the mitochondria.",
+    "Inner Membrane": "The inner membrane of mitochondria functions as a crucial barrier that encloses the energy production process within the cell. It is a vital component that generates cellular energy by utilising the electrical gradient established by the intermembrane space. This membrane consists of specialised proteins that play a significant role in energy production.",
+    "DNA": "Mitochondrial DNA is a type of genetic material found within the mitochondria of cells. It contains genes that encode the information required for producing molecules that contribute to the energy production process within the cell. Unlike nuclear DNA, mitochondrial DNA is inherited solely from the maternal line and is present in multiple copies within each mitochondrion.",
+    "Matrix": "The matrix of mitochondria is like the factory floor where most of the energy is made. It's a gooey substance that fills the space inside the inner membrane and contains all the machines that help create energy. The matrix is where the fuel is mixed with oxygen to produce cellular energy.",
+    "Ribosome": "The ribosome of mitochondria functions as a miniature assembly line that produces proteins. It operates by interpreting the genetic information encoded in the DNA and synthesising proteins accordingly.",
+    "Cristae": "The cristae are specialised folds found in the inner membrane of mitochondria, which serve to amplify the surface area available for energy production. By creating more space for the molecular machinery within the matrix to operate, the cristae help to enhance the efficiency of energy production. In essence, the function of the cristae is to facilitate an increased output of energy by optimizing the mitochondrial energy production process."
   }
 
   const modelViewer2 = document.querySelector("#hotspot-camera-view-demo");
@@ -457,9 +461,11 @@
     modelViewer2.cameraOrbit = dataset.orbit;
     modelViewer2.fieldOfView = '45deg';
 
-    var cur = annotation.innerHTML
-    var cur = cur.trim()
-    console.log(cur)
+    annotation.style.backgroundColor = '#D7D7D7';
+
+    var cur = annotation.innerHTML;
+    var cur = cur.trim();
+    console.log(cur);
 
 
 
@@ -477,7 +483,7 @@
       document.getElementById('progress').style="width: " + newProg;
       
       if (progArr.length === 7){
-        document.getElementById('mainCard').innerHTML += '<div style = "position: absolute; margin-left: auto; margin-right: auto; bottom: 0; left:0; right:0; z-index: 1; pointer-events: none; overflow: visible"><lottie-player src="https://assets7.lottiefiles.com/packages/lf20_pkanqwys.json" background="transparent"  speed="1" autoplay></lottie-player></div>'
+        document.getElementById('mainCard').innerHTML += '<div style = "position: absolute; margin-left: auto; margin-right: auto; bottom: 0; left:0; right:0; z-index: 1; pointer-events: none; overflow: visible; width: 75%"><lottie-player src="https://assets5.lottiefiles.com/packages/lf20_eoksbtra.json" background="transparent"  speed="1" autoplay></lottie-player></div>'
       };
       
       
