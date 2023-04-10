@@ -1,0 +1,8 @@
+Model Information:
+* title:	Mitochondria Cross Section Anatomy
+* source:	https://sketchfab.com/3d-models/mitochondria-cross-section-anatomy-acc7d71759a1441e8409ebb31e3c3c0d
+* author:	Nima Heydari (https://sketchfab.com/h3ydari96)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
