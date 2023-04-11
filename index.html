@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -16,6 +16,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
 
 
     
@@ -174,7 +176,7 @@
         <div class="col-lg" style = 'overflow: visible'>
           <div class="container-fluid" id = 'main' style = 'overflow: visible'>
 
-            <model-viewer style = "width: 100%; height: 450px;" id="hotspot-camera-view-demo" src="model/Mitochondria2.glb" alt="Thor and the Midgard Serpent" camera-controls touch-action="none" camera-orbit="0 0 0" camera-target="0 0 0" field-of-view="45deg" min-field-of-view="25deg" max-field-of-view="45deg" interpolation-decay="200" min-camera-orbit="auto auto 100%" ar>
+            <model-viewer style = "width: 100%; height: 450px;" id="hotspot-camera-view-demo" src="model/Mitochondria2.glb" alt="3D Mitochondrion Model" camera-controls touch-action="none" camera-orbit="-25deg 60deg 10m" camera-target="0 0 0" field-of-view="45deg" min-field-of-view="25deg" max-field-of-view="45deg" interpolation-decay="200" min-camera-orbit="auto auto 100%" ar>
               
               <button class="view-button" slot="hotspot-0" data-position="12 0 2" data-normal="0 0 0" data-orbit="25deg 75deg 10m" data-target="12 0 2">
                 Outer Membrane
@@ -232,7 +234,7 @@
     <div class="progress" style="height: 5px;">
       <div id = 'progress' class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-    <small class="text-muted">Hodgkinson & Devine Lab | 2023</small>
+    <small class="text-muted"><u>Hodgkinson & Devine Lab | 2023</u></small>
   </div>
   
 <!-- Modal -->
