@@ -174,7 +174,7 @@
     fetch(modelUrl)
       .then(response => response.arrayBuffer())
       .then(buffer => {
-        console.log('Model Loaded')
+        console.log('Model Loaded:', buffer)
         // Model has been loaded, set it as the src for the model-viewer element
         const modelViewer = document.querySelector('model-viewer');
         modelViewer.src = URL.createObjectURL(new Blob([buffer], {type: 'model/gltf-binary'}));
