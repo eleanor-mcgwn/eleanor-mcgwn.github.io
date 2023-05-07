@@ -172,7 +172,6 @@
     const modelUrl = 'model/Mitochondria2.glb';
 
     fetch(modelUrl)
-      .then(response => response.arrayBuffer())
       .then(buffer => {
         console.log('Model Loaded:', buffer)
         console.log('Model as a blob:', URL.createObjectURL(new Blob([buffer], {type: 'model/gltf-binary'}))) 
