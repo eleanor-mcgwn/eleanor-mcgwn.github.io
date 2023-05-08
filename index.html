@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Mitochondria</title>
-    <link rel="icon" href="mitochondria.ico">
+    <link rel="icon" href="src/assets/mitochondria.ico">
 
     <meta name="author" content="Eleanor McGowan">   
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-    <script type = "module" src="js/model-viewer.min.js"></script>
+    <script type = "module" src="src/js/model-viewer.min.js"></script>
     <!-- <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script> -->
 
     <style>
@@ -169,7 +169,7 @@
   </nav>
     
    <script>
-    const modelUrl = 'model/Mitochondria2.glb';
+    const modelUrl = 'src/assets/Mitochondria2.glb';
 
     fetch(modelUrl)
       .then(buffer => {
@@ -181,15 +181,13 @@
       })
       .catch(error => console.error(error));
   </script>
-
-
-
     <div class="container text-center" style = 'overflow: visible'>
       <div class="row" style = 'overflow: visible'>
         <div class="col-lg" style = 'overflow: visible'>
           <div class="container-fluid" id = 'main' style = 'overflow: visible'>
+            <model-viewer style = "width: 100%; height: 0%" src="src/assets/Mitochondria2.glb"></model-viewer>
 
-            <model-viewer style = "width: 100%; height: 450px;" id="hotspot-camera-view-demo" src="Mitochondria.glb" alt="3D Mitochondrion Model" camera-controls touch-action="none" camera-orbit="-25deg 60deg 10m" camera-target="0 0 0" field-of-view="45deg" min-field-of-view="25deg" max-field-of-view="45deg" interpolation-decay="200" min-camera-orbit="auto auto 100%" ar>
+            <model-viewer style = "width: 100%; height: 450px" id="hotspot-camera-view-demo" src="src/assets/Mitochondria2.glb" alt="3D Mitochondrion Model" camera-controls touch-action="none" camera-orbit="-25deg 60deg 10m" camera-target="0 0 0" field-of-view="45deg" min-field-of-view="25deg" max-field-of-view="45deg" interpolation-decay="200" min-camera-orbit="auto auto 100%" ar>
               
               <button class="view-button" slot="hotspot-0" data-position="12 0 2" data-normal="0 0 0" data-orbit="25deg 75deg 10m" data-target="12 0 2">
                 Outer Membrane
