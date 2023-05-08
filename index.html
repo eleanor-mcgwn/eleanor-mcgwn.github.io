@@ -167,6 +167,20 @@
       </ul>
     </div>
   </nav>
+    
+   <script>
+    const modelUrl = 'model/Mitochondria2.glb';
+
+    fetch(modelUrl)
+      .then(buffer => {
+        console.log('Model Loaded:', buffer)
+        console.log('Model as a blob:', URL.createObjectURL(new Blob([buffer], {type: 'model/gltf-binary'}))) 
+        // Model has been loaded, set it as the src for the model-viewer element
+        const modelViewer = document.querySelector('model-viewer');
+        modelViewer.src = buffer;
+      })
+      .catch(error => console.error(error));
+  </script>
 
 
 
