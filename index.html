@@ -37,10 +37,10 @@
         <li class="nav-item" data-toggle="modal" data-target ='#history'>
           <a  href="#" class="nav-link">History</a>
         </li>
-        <li class="nav-item" data-toggle="modal" data-target ='#overview'>
+        <li class="nav-item" data-toggle="modal" data-target ='#function'>
           <a  href="#" class="nav-link">Function</a>
         </li>
-        <li class="nav-item" data-toggle="modal" data-target ='#function'>
+        <li class="nav-item" data-toggle="modal" data-target ='#genetics'>
           <a class="nav-link" href="#">Genetics</a>
         </li>
         <li class="nav-item" data-toggle="modal" data-target ='#healthAndDis'>
@@ -110,7 +110,7 @@
 
 
 
-  <div class="footer" data-toggle="modal" data-target ='#exampleModalLong'>
+  <div class="footer" data-toggle="modal" data-target ='#acred'>
     <div class="progress" style="height: 5px;">
       <div id = 'progress' class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
@@ -118,11 +118,11 @@
   </div>
   
 <!-- Modal -->
-<div class="modal fade" id="overview" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="genetics" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Overview</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Genetics</h5>
 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -131,14 +131,16 @@
       <div class="modal-body">
         <h6 class="modal-title" id="exampleModalLongTitle"></h6>
         <p>
-          Mitochondria are organelles found in most eukaryotic cells, which are responsible for producing energy in the form of ATP through the process of cellular respiration. They are often referred to as the "powerhouses" of the cell.
+          <b>Mitochondrial DNA (mtDNA)</b> is a <b>small, circular molecule of genetic material found within the matrix of the mitochondria</b>. It contains <b>37 genes</b> that encode for proteins, transfer RNA (tRNA), and ribosomal RNA (rRNA) involved in energy production. While mtDNA plays a vital role, most proteins necessary for mitochondrial function are <b>encoded by nuclear DNA</b>. Mutations in both mtDNA and nuclear-encoded mitochondrial genes can lead to mitochondrial diseases.<br><br>
 
-          Mitochondria are double-membraned organelles, with an outer membrane and an inner membrane that is highly folded, creating structures called cristae. The space between the two membranes is called the intermembrane space, while the fluid-filled interior of the organelle is called the matrix.
-          
-          The process of cellular respiration involves the conversion of glucose and other molecules into ATP, which is used by the cell as an energy source. This process occurs within the mitochondria, specifically in the inner membrane and matrix. The energy released during cellular respiration is used to power many cellular processes, including muscle contraction, cell division, and the synthesis of proteins and other molecules.
-          
-          In addition to their role in energy production, mitochondria also play a key role in other cellular processes, such as calcium signaling, regulation of cell death, and the synthesis of heme, a component of hemoglobin. Mitochondrial dysfunction has been implicated in a number of diseases, including cancer, diabetes, and neurodegenerative disorders such as Alzheimer's and Parkinson's disease.
+          One intriguing aspect of mtDNA is its <b>maternal inheritance pattern</b>. During fertilisation, only the mitochondria from the egg contribute to the mtDNA of the offspring, as sperm mitochondria are typically eliminated. This unique pattern enables researchers to trace maternal lineages and <b>study human evolutionary history</b>. By analysing mtDNA sequences across populations, scientists gain insights into migration patterns, genetic diversity, and human ancestry.
         </p>
+        <canvas id="myChart"></canvas>
+
+          
+
+        </div>
+      </div>
 
       
       </div>
@@ -150,7 +152,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="acred" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -163,19 +165,13 @@
       <div class="modal-body">
         <h6 class="modal-title" id="exampleModalLongTitle"></h6>
         <p>
-          This interactive webpage was developed in 2023 by Eleanor McGowan in collaboration with the Hodgkinson/Devine Lab. All details have been fact checked by expert scientists in mitochondrial research. 
-          <br><br>
-          We would like to acknowledge and give credit to the following sources for providing content and materials used on our webpage:
-          <ul>
-            <li>SketchFab/Nima</li>
-            <li>Blender</li>
-            <li>GitHub pages</li>
-            <li>Chat GPT</li>
-            <li>Google Analytics</li>
-          </ul>
-          We are grateful for the use of their materials and have provided attribution wherever possible. If you believe that any attribution is missing or incorrect, please contact eleanor.mcgwn@gmail.com and we will correct it promptly.
-          <br><br>
-          You are free to use and distribute this work as you please. Attribute as Hodgekinson/Devine (2023).
+          This website was developed in 2023 by Eleanor McGowan in collaboration with the Hodgkinson/Devine Lab. 
+
+          Many thanks goes to the expert scientists in mitochondrial research that helped fact check this work: *list*<br><br>
+          
+          We would like to acknowledge and give credit to the following sources for providing content and materials used on our website: SketchFab and artists, Blender, GitHub Pages, Chat GPT, & Google Analytics. We are grateful for the use of these resources and have provided attribution wherever possible. If you believe that any attribution is missing or incorrect, please contact eleanor.mcgwn@gmail.com and we will correct it promptly. <br><br>
+          
+          You are free to use and distribute this work as you would like. If you do so, please attribute us as Hodgkinson & Devine, 2023.
         </p>
       
       </div>
@@ -201,11 +197,11 @@
       <div class="modal-body">
         <h6 class="modal-title" id="exampleModalLongTitle"></h6>
         <p>
-          The origin and evolution of mitochondria is a topic of scientific interest and debate.
+          The origin and evolution of mitochondria is a topic of scientific interest and debate.<br><br>
 
-          The most widely accepted theory of mitochondrial origin is the **endosymbiotic theory**, which suggests that mitochondria were once free-living bacteria that were engulfed by a larger host cell. This event likely occurred over a billion years ago and resulted in a symbiotic (mutually beneficial) relationship between the host cell and the mitochondria, where the host provides protection and nutrients to the mitochondria, and the mitochondria provides energy to the host cell.
+          The most widely accepted theory of mitochondrial origin is the <b>endosymbiotic theory</b>, which suggests that <b>mitochondria were once free-living bacteria that were engulfed by a larger host cell.</b> This event likely occurred <b>over a billion years ago</b> and resulted in a <b>symbiotic (mutually beneficial) relationship</b> between the host cell and the mitochondria, where the host provides protection and nutrients to the mitochondria, and the mitochondria provides energy to the cell. <br><br>
           
-          Over time, the host and the mitochondria have evolved together, and mitochondria have become specialised to perform various functions within the host cell.
+          Over time, the cell and the mitochondria have evolved together, and mitochondria have become specialised to perform many important functions within the cell.
         </p>
       
       </div>
@@ -232,14 +228,25 @@
         <h6 class="modal-title" id="exampleModalLongTitle"></h6>
         <p>
           Mitochondria have many important functions within a cell:
+          <ol>
+        <li>
+          <u>Energy production:</u> One of the primary functions of mitochondria is to generate energy for the cell. This energy is called ATP (or adenosine triphosphate) and acts as the fuel for almost all cellular processes!
+        </li>
+        <li>
+          <u>Metabolism:</u> Mitochondria play a key role in metabolism by participating in the break down of fatty acids, amino acids, and glucose. This breakdown occurs in the mitochondrial matrix.
+        </li>
+        <li>
+          <u>Calcium regulation:</u> Mitochondria are involved in regulating the concentration of calcium ions in the cell. Calcium is an important cellular molecule that is involved in processes such as neuronal signalling and muscle contraction. 
+        </li>
+        <li>
+          <u>Cell signalling:</u> Mitochondria produce signalling molecules called reactive oxygen species (ROS) and nitric oxide (NO). ROS and NO can activate various signalling pathways that result in gene expression, cell division and cell death.
+        </li>
+        <li>
+          <u>Cell Death:</u> Apoptosis is the scientific name given to programmed cell death. Mitochondria play a crucial role in apoptosis because the release proteins which activate cellular death pathways.
+        </li>
+      </ol>
 
-          1. Energy production: Mitochondria are the powerhouses of the cell. One of the primary functions of mitochondria is to generate energy for the cell. This energy is called ATP (or adenosine triphosphate) and acts as the fuel for almost all cellular processes!
-          2. Metabolism: Mitochondria play a key role in metabolism by participating in the break down of fatty acids, amino acids, and glucose. This breakdown occurs in the mitochondrial matrix.
-          3. Calcium regulation: Mitochondria are involved in regulating the concentration of calcium ions in the cell. Calcium is an important cellular molecule that is involved in processes such as neuronal signalling and muscle contraction. 
-          4. Cell signalling: Mitochondria produce signalling molecules called reactive oxygen species (ROS) and nitric oxide (NO). ROS and NO can activate various signalling pathways that result in gene expression, cell division and cell death.
-          5. Cell Death: Apoptosis is the scientific name given to programmed cell death. Mitochondria play a crucial role in apoptosis because the release proteins which activate cellular death pathways.
         </p>
-        <canvas id="myChart"></canvas>
 
       </div>
       <div class="modal-footer">
@@ -262,14 +269,24 @@
       <div class="modal-body">
         <h6 class="modal-title" id="exampleModalLongTitle"></h6>
         <p>
-          Since we now know that mitochondria have a wide range of functions in the cell. It is no surprise that dysfunction of mitochondria can lead to a wide range of health problems and diseases.
-
-          1. Neurodegenerative diseases: Mitochondrial dysfunction has been linked to a number of neurodegenerative diseases, including Parkinson's disease, Alzheimer's disease, and Huntington's disease. These conditions are associated with the accumulation of damaged proteins in the neurons, leading to impaired energy production and cellular stress.
-          2. Cardiovascular diseases: Mitochondrial dysfunction can lead to a range of cardiovascular diseases, including heart failure, arrhythmias, and ischemic heart disease. This is because the heart muscle requires a constant supply of energy to function properly, and any disruption to mitochondrial function can compromise this supply.
-          3. Metabolic disorders: Mitochondrial dysfunction has also been implicated in a range of metabolic disorders, such as type 2 diabetes, obesity, and metabolic syndrome. This is because mitochondria are responsible for regulating glucose and lipid metabolism, and any disruption to their function can lead to impaired energy balance.
-          4. Cancer: Mitochondrial dysfunction has been linked to the development and progression of cancer. In some cases, cancer cells have been found to have mutations in their mitochondrial DNA, leading to altered energy metabolism and increased proliferation.
-          5. Aging: Mitochondrial dysfunction is also thought to play a role in the aging process, as it is associated with a decline in energy production and increased oxidative stress. This can lead to a range of age-related diseases, such as neurodegenerative diseases, cardiovascular diseases, and metabolic disorders.
-          
+          Considering that mitochondria carry out a wide range of import functions for our cells, its no surprise that mitochondrial dysfunction can lead to a wide range of health problems and disease.
+          <ol>
+            <li>
+            <u>Neurodegenerative diseases:</u> Mitochondrial dysfunction has been linked to a number of neurodegenerative diseases, including Parkinson's disease, Alzheimer's disease, and Huntington's disease. These conditions are associated with the accumulation of misshapen proteins in the neurons, leading to impaired energy production and cellular stress.
+            </li>
+            <li>
+            <u>Cardiovascular diseases:</u> Mitochondrial dysfunction can lead to a range of cardiovascular diseases, including heart failure, arrhythmias, and ischemic heart disease. This is because the heart muscles require a constant supply of energy to function properly, and any disruption to mitochondrial function can compromise this supply.
+            </li>
+            <li>
+            <u>Metabolic disorders:</u> Mitochondrial dysfunction has also been implicated in a range of metabolic disorders, such as type 2 diabetes, obesity, and metabolic syndrome. This is because mitochondria are responsible for regulating glucose and lipid metabolism, and any disruption to their function can lead to impaired energy balance.
+            </li>
+            <li>
+            <u>Cancer:</u> Mitochondrial dysfunction has been linked to the development and progression of cancer. In some cases, cancer cells have been found to have mutations in their mitochondrial DNA, leading to altered energy metabolism and increased proliferation.
+            </li>
+            <li>
+            <u>Aging:</u> Mitochondrial dysfunction is also thought to play a role in the aging process, as it is associated with a decline in energy production and increased oxidative stress. This can lead to a range of age-related diseases.
+            </li>
+          </ol>
           Overall, mitochondrial dysfunction can have a significant impact on human health, and understanding the underlying mechanisms involved could lead to the development of new therapies for a range of diseases.
         </p>
       
@@ -289,7 +306,7 @@
     type: 'doughnut',
     data: {
       labels: [
-      'Essential Proteins',
+      'Mitochondrial Proteins',
       'Transfer RNA',
       'Ribosomal RNA'
       ],
@@ -297,9 +314,9 @@
         label: 'Number of Genes',
         data: [13, 22, 2],
         backgroundColor: [
-          '#F0F0F0',
-          '#F4F4F4',
-          '#F9F9F9'
+          '#00FFFF',
+          '#17BCE5',
+          '#14A3C7'
         ],
         hoverOffset: 4
       }]
